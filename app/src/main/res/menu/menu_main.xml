@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shuh.osplearning.MainActivity">
+
+    <item android:id="@+id/action_edit"
+        android:title="Pencil"
+        android:orderInCategory="80"
+        android:icon="@mipmap/pencil"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/action_exit"
+        android:title="Exit"
+        android:orderInCategory="100"
+        app:showAsAction="never">
+
+        <!--<menu>
+            <item android:id="@+id/action_edit"
+                android:title="Pencil"
+                android:orderInCategory="80"
+                android:icon="@mipmap/pencil"
+                app:showAsAction="ifRoom" />
+
+            <item android:id="@+id/action_edit2"
+                android:title="Pencil"
+                android:orderInCategory="80"
+                android:icon="@mipmap/pencil"
+                app:showAsAction="ifRoom" />
+        </menu>-->
+    </item>
+</menu>
