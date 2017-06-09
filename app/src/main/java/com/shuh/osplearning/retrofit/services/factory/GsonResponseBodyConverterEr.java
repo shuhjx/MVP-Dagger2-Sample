@@ -17,7 +17,6 @@ import okhttp3.MediaType;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 
-import static com.google.common.base.Charsets.UTF_8;
 /**
  * https://github.com/MyAndroidP/Gson-adapter
  * Created by pc-135 on 2017/6/7.
@@ -25,6 +24,7 @@ import static com.google.common.base.Charsets.UTF_8;
 public class GsonResponseBodyConverterEr<T> implements Converter<ResponseBody, T> {
     private final Gson gson;
     private final TypeAdapter<T> adapter;
+    private static final Charset UTF_8 = Charset.forName("UTF-8");
 
     GsonResponseBodyConverterEr(Gson gson, TypeAdapter<T> adapter) {
         this.gson = gson;
@@ -50,6 +50,7 @@ public class GsonResponseBodyConverterEr<T> implements Converter<ResponseBody, T
                 int code=jsonObject.optInt("result");
                 if(code!=1){
                     value.close();
+                    throw new RuntimeException("errorCode");
 //                    throw new CustomException(code,jsonObject.optJSONObject("data").optInt(
 //                            "errorCode"),jsonObject.optJSONObject("data").optString(
 //                            "errorMessage"));
@@ -60,6 +61,7 @@ public class GsonResponseBodyConverterEr<T> implements Converter<ResponseBody, T
                 int code=jsonObject.optInt("code");
                 if (code!=0){
                     value.close();
+                    throw new RuntimeException(message);
 //                    throw new CustomException(code,message);
                 }else{
                     System.out.println(response);

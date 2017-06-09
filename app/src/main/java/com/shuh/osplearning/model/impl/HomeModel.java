@@ -14,6 +14,19 @@ public class HomeModel extends BaseRecyclerAdapter.BaseModel {
         return title;
     }
 
+    @Override
+    public String toString() {
+        return "HomeModel{" +
+                "id='" + id + '\'' +
+                ", imgurl='" + imgurl + '\'' +
+                ", docurl='" + docurl + '\'' +
+                ", time='" + time + '\'' +
+                ", title='" + title + '\'' +
+                ", channelname='" + channelname + '\'' +
+                ", has_content=" + has_content +
+                '}';
+    }
+
     //{
     // "imgurl":"http://cms-bucket.nosdn.127.net/catchpic/d/d9/d967adc6e2049a26118df414c5f6367a.jpg",
     // "has_content":true,

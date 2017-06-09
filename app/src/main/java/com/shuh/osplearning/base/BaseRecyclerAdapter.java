@@ -9,17 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by pc-135 on 2017/6/7.
  */
 public abstract class BaseRecyclerAdapter<H extends BaseRecyclerAdapter.BaseViewHolder> extends RecyclerView.Adapter<H> {
 
-    protected ArrayList<? extends BaseModel> list;
+    protected List<? extends BaseModel> list;
     protected Context context;
 
-    public BaseRecyclerAdapter(Context context, ArrayList<? extends BaseModel> list) {
+    public BaseRecyclerAdapter(Context context, List<? extends BaseModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -68,9 +68,9 @@ public abstract class BaseRecyclerAdapter<H extends BaseRecyclerAdapter.BaseView
         public TextView getTextView(@IdRes int id){
             return (TextView) findView(id);
         }
-        public View setText(@IdRes int id, CharSequence text){
+        public BaseViewHolder setText(@IdRes int id, CharSequence text){
             getTextView(id).setText(text);
-            return parent;
+            return this;
         }
 
         public ImageView getImageView(@IdRes int id){
