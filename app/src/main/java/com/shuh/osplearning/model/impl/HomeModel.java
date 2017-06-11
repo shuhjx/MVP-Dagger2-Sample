@@ -7,6 +7,7 @@ import com.shuh.osplearning.base.BaseRecyclerAdapter;
  */
 public class HomeModel extends BaseRecyclerAdapter.BaseModel {
 
+    //image size 304*228
     private String id, imgurl, docurl, time, title, channelname;
     private boolean has_content;
 

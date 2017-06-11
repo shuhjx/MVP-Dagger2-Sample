@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">OSPLearning</string>
+    <item type="id" name="swipeRefreshLayout" />
+    <item type="id" name="recyclerView" />
+    <item type="id" name="image" />
+    <item type="id" name="text" />
+    <item type="id" name="floatingBtn" />
 </resources>

@@ -2,6 +2,7 @@ package com.shuh.osplearning.base;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
@@ -77,7 +78,13 @@ public abstract class BaseRecyclerAdapter<H extends BaseRecyclerAdapter.BaseView
             return (ImageView) findView(id);
         }
 
-
+        public BaseViewHolder setImage(@IdRes int id, String url){
+            ImageLoader imageLoader = BaseApplication
+                    .getApplication()
+                    .getImageLoader();
+            imageLoader.setImageUrl(parent, url, getImageView(id));
+            return this;
+        }
     }
 
     public static class BaseModel {
